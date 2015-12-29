@@ -29,9 +29,9 @@ var App=React.createClass({
 				var second=val.substring(pos+1);
 				var fN=parseInt(first);
 				var sN=parseInt(second);
-				this.setState({value:fN+sN});	
+				this.setState({value:fN+sN});
 			}
-			
+
 		}else if(val.indexOf("+")===-1 && val.indexOf("–")!==-1 && val.indexOf("X")===-1 && val.indexOf("÷")===-1){
 			var pos=val.indexOf("–");
 			if(pos===0 || pos===val.length-1){
@@ -41,7 +41,7 @@ var App=React.createClass({
 				var second=val.substring(pos+1);
 				var fN=parseInt(first);
 				var sN=parseInt(second);
-				this.setState({value:fN-sN});	
+				this.setState({value:fN-sN});
 			}
 		}else if(val.indexOf("+")===-1 && val.indexOf("–")===-1 && val.indexOf("X")!==-1 && val.indexOf("÷")===-1){
 			var pos=val.indexOf("X");
@@ -52,7 +52,7 @@ var App=React.createClass({
 				var second=val.substring(pos+1);
 				var fN=parseInt(first);
 				var sN=parseInt(second);
-				this.setState({value:fN*sN});	
+				this.setState({value:fN*sN});
 			}
 		}else if(val.indexOf("+")===-1 && val.indexOf("–")===-1 && val.indexOf("X")===-1 && val.indexOf("÷")!==-1){
 			var pos=val.indexOf("÷");
@@ -63,7 +63,7 @@ var App=React.createClass({
 				var second=val.substring(pos+1);
 				var fN=parseInt(first);
 				var sN=parseInt(second);
-				this.setState({value:fN/sN});	
+				this.setState({value:fN/sN});
 			}
 		}else{
 			this.setState({value:""});
@@ -74,10 +74,10 @@ var App=React.createClass({
 		centerText.align="center";
 		return(
 			<div className="panel panel-primary">
-				<div className="panel-body">	
-					<div className="col-xs-12">
+				<div className="panel-body">
+					<div className="col-sm-12">
 						<div className="form-group">
-							<input type="text" className="form-control" value={this.state.value} disabled/>					
+							<input type="text" className="form-control" value={this.state.value} disabled/>
 						</div>
 					</div>
 					<GeneralButton onClick={this.onClick.bind(this,"1")} value="1" />
@@ -98,8 +98,8 @@ var App=React.createClass({
 					<GeneralButton onClick={this.onClick.bind(this,"÷")} number={false} value="÷" />
 				</div>
 			</div>
-		);	
-	}	
+		);
+	}
 });
 
 module.exports=App;
